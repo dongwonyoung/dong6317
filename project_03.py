@@ -1,32 +1,16 @@
-class Employee:
-    def __init__(self):
-        self.name = input("이름 : ")
-        self.salary = int(input("급여 : "))
+print("별 찍기 \n1.☆ \n2.★ \n3.#")
+mod = int(input("모드를 선택 하시오 : "))
 
-    def display_info(self):
-        print("이름 : ", self.name, "/ 급여 : ", self.salary)
+if mod == 1:
+    shape = "☆"
+elif mod == 2:
+    shape = "★"
+elif mod == 3:
+    shape = "#"
+else:
+    print("다시 입력하세요")
 
-information = Employee()
-information.display_info()
+count = int(input("원하는 크기를 입력하세요 : "))
 
-class Manager:
-    def __init__(self):
-        self.team_members = []
-
-    def add_team_member(self, employee):
-        self.team_members.append(employee)
-
-    def display_team(self):
-        return self.team_members
-
-team_information = Manager()
-team_information.add_team_member(information.name)
-
-while True:
-    user_input = input("추가할 직원 이름 (없을 시 '끝' 입력) : ")
-    if user_input.lower() == '끝':
-        break
-    team_information.add_team_member(user_input)
-
-print("팀원 목록 : ", team_information.display_team())
-
+for i in range(count):
+    print(shape, end = " ")
